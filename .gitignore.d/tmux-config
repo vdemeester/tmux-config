@@ -1,1 +1,7 @@
 *
+!.tmux.conf
+!.tmux.d/*
+!bin
+!bin/tmx
+!.gitignore.d
+!.gitignore.d/tmux-config
