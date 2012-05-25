@@ -1,0 +1,16 @@
+# Filename:     .sh/hook/shrc.post/tmux
+# Author:       Vincent Demeester
+# License:      This file is licensed under the GPL v2
+# --------------------------------------------------------------------------- #
+# This file set a few environment variable related to tmux (session name, …)
+# if the interactive shell is in tmux.
+# --------------------------------------------------------------------------- #
+command -v tmux > /dev/null && {
+    if test -n "$TMUX"; then
+        # Getting the session name
+        TMUX_SESSION_NAME=$(tmux display-message -p "#S")
+        export TMUX_SESSION_NAME
+    fi
+}
+# vim:filetype=sh foldmethod=marker autoindent expandtab shiftwidth=4
+

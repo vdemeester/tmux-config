@@ -3,5 +3,9 @@
 !.tmux.d/*
 !bin
 !bin/tmx
+!.sh
+!.sh/hook
+!.sh/hook/shrc.post
+!.sh/hook/shrc.post/tmux
 !.gitignore.d
 !.gitignore.d/tmux-config
