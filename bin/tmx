@@ -12,7 +12,6 @@
 # 2014-07-11: If a configuration file is found for the given name session (when creating), load it
 
 test -n "$TMUX_CONFIG_HOME" || TMUX_CONFIG_HOME=$XDG_CONFIG_HOME/tmux
-echo $TMUX_CONFIG_HOME
 
 # Works because bash automatically trims by assigning to variables and by
 # passing arguments
@@ -34,12 +33,9 @@ TMUX_OPTS="-L $base_session"
 # This actually works without the trim() on all systems except OSX
 tmux_nb=$(trim `tmux $TMUX_OPTS ls | grep "^$base_session" | wc -l`)
 if [[ "$tmux_nb" == "0" ]]; then
-    set -x
     # Start an independant tmux
     test -e $TMUX_CONFIG_HOME/$base_session && TMUX_OPTS="$TMUX_OPTS -f $TMUX_CONFIG_HOME/$base_session"
     echo "Launching tmux base session $base_session ... [$TMX_OPTS]"
-    echo tmux $TMUX_OPTS new-session -s $base_session
-    read
     tmux $TMUX_OPTS new-session -s $base_session
 else
     # Make sure we are not already in a tmux session
