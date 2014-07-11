@@ -3,6 +3,10 @@
 !.tmux.d/*
 !bin
 !bin/tmx
+!.config
+!.config/tmux
+!.config/tmux/commons
+!.config/tmux/commons/keybindings
 !.sh
 !.sh/hook
 !.sh/hook/shrc.post
