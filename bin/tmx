@@ -36,7 +36,10 @@ if [[ "$tmux_nb" == "0" ]]; then
     # Start an independant tmux
     test -e $TMUX_CONFIG_HOME/$base_session && TMUX_OPTS="$TMUX_OPTS -f $TMUX_CONFIG_HOME/$base_session"
     echo "Launching tmux base session $base_session ... [$TMX_OPTS]"
-    tmux $TMUX_OPTS new-session -s $base_session
+    tmux $TMUX_OPTS new-session -s $base_session -d
+    # TODO do something about that
+    # echo "Executing init scripts"
+    # test -e $TMUX_CONFIG_HOME/$base_session.init && sh $TMUX_CONFIG_HOME/$base_session.init
 else
     # Make sure we are not already in a tmux session
     if [[ -z "$TMUX" ]]; then
