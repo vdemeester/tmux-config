@@ -10,7 +10,6 @@
 # http://forums.gentoo.org/viewtopic-t-836006-start-0.html
 #
 # 2014-07-11: If a configuration file is found for the given name session (when creating), load it
-
 test -n "$TMUX_CONFIG_HOME" || TMUX_CONFIG_HOME=$XDG_CONFIG_HOME/tmux
 
 # Works because bash automatically trims by assigning to variables and by
