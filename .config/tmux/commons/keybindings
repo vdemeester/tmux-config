@@ -1,6 +1,6 @@
 set -g history-limit 500000
 # Be sure to deactive the mode
-set -g mode-mouse off
+# set -g mode-mouse off
 # By default tmux adds a small delay when sending commands.
 # Reducing this delay by setting escape-time.
 set -sg escape-time 1
